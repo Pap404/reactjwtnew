@@ -1,7 +1,7 @@
 import React from "react";
-import { getLogin } from "../action";
+import {getLogin, getUserSuccess} from "../action";
 import { connect } from "react-redux";
-import { Redirect } from 'react-router-dom';
+import { history} from "../index";
 
 class Login extends React.Component {
     state = {
@@ -18,19 +18,14 @@ class Login extends React.Component {
     handleSubmit = (event) => {
         event.preventDefault();
         this.props.getLogin(this.state)
-            .then(this.renderRedirect());
+             .then( () => {
+                 getUserSuccess();
+                 history.push('/user')
+             }
+             );
     };
 
-    renderRedirect = () => {
-        if (this.props.validToken === true) {
-            return <Redirect to="/resource/user" />
-    }
-        };
-
     render() {
-        // if (this.props.validToken == true) {
-        //     return <Redirect to='/user/'/>
-        // } else {
             return (
                 <div className="App">
                     <form onSubmit={this.handleSubmit}>

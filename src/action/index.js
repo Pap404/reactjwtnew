@@ -21,6 +21,53 @@ export const getUser = (user) => {
     }
 };
 
+export const getMessages = (message) => {
+    return {
+        type: 'MESSAGE',
+        payload: message
+    }
+};
+
+export const getComments = (comments) => {
+    return {
+        type: 'COMMENTS',
+        payload: comments
+    }
+};
+
+export const getAllComments = () => {
+    return (dispatch) => {
+        return axios.get('https://fluxjwt-app.herokuapp.com/api/comment', {
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + localStorage.getItem('token')
+            }
+        })
+        .then(response => {
+            console.log(response.data);
+            dispatch(getComments(response.data))
+            })
+    }
+};
+
+export const getAllMessage = () => {
+    return (dispatch) => {
+        return axios.get('https://fluxjwt-app.herokuapp.com/api/message', {
+            headers: {
+                'Accept' : 'application/json',
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + localStorage.getItem('token')
+            }
+        })
+            .then(response => {
+                console.log(response.data);
+                dispatch(getMessages(response.data))
+            })
+            .catch(e => console.log(e))
+    }
+};
+
 export const getUserSuccess = () => {
     return (dispatch) => {
         return axios.get('https://fluxjwt-app.herokuapp.com/api/users/user', {

@@ -1,31 +1,47 @@
 import React from 'react';
 import { connect } from "react-redux";
-import {getUserSuccess} from "../action";
+import { getAllMessage } from "../action";
+import Message from "./Message";
+import Comments from "./Comments";
 
 class User extends React.Component {
 
-    render() {
-        return(
-            <div>
-                Content for user
-            </div>
-        )
+    componentDidMount() {
+         this.props.getAllMess();
     }
 
-//     componentDidMount() {
-//         this.props.onUser();
-//     }
-// }
-//
-// const mapDispatchToProps = (dispatch) => {
-//     onUser: () => {
-//         dispatch(getUserSuccess())
-//     }
-// };
-//
-// export default connect(
-//     null,
-//     mapDispatchToProps
-// )(User);
+    handleGet = (event) => {
+        event.preventDefault();
+    };
+
+    render() {
+        // const m = this.props.message;
+        return (
+                <div className="App">
+                        <h1>CONTENT FOR USER</h1>
+                        {/*<button onClick={this.handleGet}>*/}
+                        {/*    MESSAGES*/}
+                        {/*</button>*/}
+                    <h1>
+                        {this.props.message.map(m => <Message key={m.id} message={m} />)}
+                    </h1>
+                    <Comments />
+                    </div>
+        )
+    }
 }
-export default User;
+
+const mapDispatchToProps = (dispatch) => ({
+    getAllMess: () => dispatch(getAllMessage())
+});
+
+const mapStateToProps = (state) => {
+        return {
+        message: state.message.message
+    };
+};
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(User);
