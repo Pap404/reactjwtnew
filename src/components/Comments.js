@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from "react-redux";
-import {getAllComments, getAllMessage} from "../action";
+import {getAllComments} from "../action";
 
 class Comments extends React.Component {
 

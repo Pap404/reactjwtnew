@@ -1,21 +1,39 @@
 import React from 'react';
 import Comment from "./Comment";
+import {getAllComments} from "../action";
+import {connect} from "react-redux";
 
 class Message extends React.Component {
 
+    componentDidMount() {
+        this.props.getAllCom();
+    }
 
     render() {
         return (
             <div className="App">
-                <h6>Messages</h6>
-                    {this.props.message.id}
-                    {this.props.message.content}
-                    {this.props.message.autor}
-                {/*{this.props.message.comment.map(m => m)}*/}
-                {/*{this.props.message.comment.map(m => m)}*/}
+                <br/><i>Message </i>
+                       <br/> <font size={4}>Id: {this.props.message.id}
+                       <br/>Content : {this.props.message.content}
+                       <br/>Author: {this.props.message.autor}
+                       <br/>{this.props.message.comment.map(c => <Comment key={c.id} comment={c} />)}
+            </font>
             </div>
         )
     }
 }
 
-export default Message;
+const mapDispatchToProps = (dispatch) => ({
+    getAllCom: () => dispatch(getAllComments())
+});
+
+const mapStateToProps = (state) => {
+    return {
+        comment: state.comment
+    }
+};
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(Message);

@@ -45,7 +45,6 @@ export const getAllComments = () => {
             }
         })
         .then(response => {
-            console.log(response.data);
             dispatch(getComments(response.data))
             })
     }
@@ -61,7 +60,6 @@ export const getAllMessage = () => {
             }
         })
             .then(response => {
-                console.log(response.data);
                 dispatch(getMessages(response.data))
             })
             .catch(e => console.log(e))
@@ -76,7 +74,6 @@ export const getUserSuccess = () => {
             }
         })
             .then(response => {
-                console.log(response.data);
                 dispatch(getUser(response.data))
             })
     }
@@ -86,7 +83,6 @@ export const getLogin = (loginRequest) => {
     return (dispatch) => {
         return axios.post('https://fluxjwt-app.herokuapp.com/api/security/login', loginRequest)
             .then(response => {
-                console.log(response.data.token);
                 localStorage.setItem('token', response.data.token);
                 dispatch(login(response.data.token))
             })
@@ -97,7 +93,6 @@ export const getRegistration = (registrationRequest) => {
     return (dispatch) => {
         return axios.post('https://fluxjwt-app.herokuapp.com/api/security/registration', registrationRequest)
             .then(response => {
-                console.log(response.data.token);
                 localStorage.setItem('user', 'data');
                 dispatch(registration(response.data.user))
             })

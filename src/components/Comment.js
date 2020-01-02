@@ -1,16 +1,13 @@
 import React from 'react';
-import { connect } from "react-redux";
 
 class Comment extends React.Component {
-
 
     render() {
         return (
             <div className="App">
-                <h5>Comment</h5>
-                {this.props.comment.id}
-                {/*{this.props.comment.comment}*/}
-                {/*{this.props.comment.commentator}*/}
+                <br/>Comment id: {this.props.comment.id}
+                <br/>Comment: {this.props.comment.comment}
+                <br/>Commentator: {this.props.comment.commentator}
             </div>
         )
     }
