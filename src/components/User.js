@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from "react-redux";
 import { getAllMessage } from "../action";
 import Message from "./Message";
+import CreateMessage from "./CreateMessage";
 
 class User extends React.Component {
 
@@ -13,7 +14,9 @@ class User extends React.Component {
         return (
                 <div className="App">
                         <h1>CONTENT FOR USER</h1>
+                    <CreateMessage />
                     <h1>
+                        {/*{console.log(this.props.message)}*/}
                         {this.props.message.map(m => <Message key={m.id} message={m} />)}
                     </h1>
                     </div>

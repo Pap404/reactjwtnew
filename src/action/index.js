@@ -35,6 +35,27 @@ export const getComments = (comments) => {
     }
 };
 
+export const createMessage = (message) => {
+    return {
+        type: 'CREATE_MESSAGE',
+        payload: message
+    }
+};
+
+export const createMessageSuccess = (message) => {
+    return (dispatch) => {
+        return axios.post('https://fluxjwt-app.herokuapp.com/api/message/user', message,{ headers: {
+            'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + localStorage.getItem('token')
+        }})
+            .then(response => {
+                console.log(response.data);
+                dispatch(createMessage(response.data))
+            })
+    }
+};
+
 export const getAllComments = () => {
     return (dispatch) => {
         return axios.get('https://fluxjwt-app.herokuapp.com/api/comment', {

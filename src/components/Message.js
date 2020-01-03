@@ -16,7 +16,8 @@ class Message extends React.Component {
                        <br/> <font size={4}>Id: {this.props.message.id}
                        <br/>Content : {this.props.message.content}
                        <br/>Author: {this.props.message.autor}
-                       <br/>{this.props.message.comment.map(c => <Comment key={c.id} comment={c} />)}
+                       <br/>{this.props.message.comment && this.props.message.comment.map(c =>
+                    <Comment key={c.id} comment={c} />)}
             </font>
             </div>
         )
