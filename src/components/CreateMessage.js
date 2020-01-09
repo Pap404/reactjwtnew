@@ -1,10 +1,9 @@
 import React from 'react';
 import {createMessageSuccess} from "../action";
 import { connect } from "react-redux";
-import {history} from "../index";
 
 class CreateMessage extends React.Component{
-    state ={
+    state = {
         content: ''
     };
 

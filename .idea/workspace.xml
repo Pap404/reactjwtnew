@@ -4,7 +4,10 @@
     <list default="true" id="edc61f9e-af10-45b5-9cbb-aa25fd20d35f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/action/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/action/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Comments.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CreateComment.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CreateMessage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CreateMessage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Message.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Message.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Registration.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Registration.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/User.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/reducer/comments.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducer/comments.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/reducer/message.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducer/message.js" afterDir="false" />
@@ -119,6 +122,12 @@
       <workItem from="1577789397107" duration="3494000" />
       <workItem from="1577964275783" duration="13253000" />
       <workItem from="1578060654990" duration="10291000" />
+      <workItem from="1578311760054" duration="7011000" />
+      <workItem from="1578399267286" duration="7524000" />
+      <workItem from="1578471426003" duration="3572000" />
+      <workItem from="1578496386653" duration="79000" />
+      <workItem from="1578496521690" duration="1491000" />
+      <workItem from="1578574164692" duration="1548000" />
     </task>
     <servers />
   </component>
@@ -130,34 +139,42 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="697" y="95" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.728@0.0.1366.728" timestamp="1576241242157" />
+    <state x="707" y="127" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1578474134982">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="707" y="127" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1578474134982" />
     <state width="254" height="195" key="DatabaseViewActions_Filter" timestamp="1576238866221">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="254" height="195" key="DatabaseViewActions_Filter/0.0.1366.728@0.0.1366.728" timestamp="1576238866221" />
-    <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1578061613388">
+    <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1578402332146">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1578061613388" />
-    <state width="1323" height="177" key="GridCell.Tab.0.bottom" timestamp="1578072801581">
+    <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1578402332146" />
+    <state width="1323" height="177" key="GridCell.Tab.0.bottom" timestamp="1578578825647">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="177" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1578072801581" />
-    <state width="1323" height="177" key="GridCell.Tab.0.center" timestamp="1578072801581">
+    <state width="1323" height="177" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1578578825647" />
+    <state width="1323" height="177" key="GridCell.Tab.0.center" timestamp="1578578825645">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="177" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1578072801581" />
-    <state width="1323" height="177" key="GridCell.Tab.0.left" timestamp="1578072801579">
+    <state width="1323" height="177" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1578578825645" />
+    <state width="1323" height="177" key="GridCell.Tab.0.left" timestamp="1578578825632">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="177" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1578072801579" />
-    <state width="1323" height="177" key="GridCell.Tab.0.right" timestamp="1578072801581">
+    <state width="1323" height="177" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1578578825632" />
+    <state width="1323" height="177" key="GridCell.Tab.0.right" timestamp="1578578825645">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="177" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1578072801581" />
-    <state x="379" y="187" key="com.intellij.ide.util.TipDialog" timestamp="1578060669351">
+    <state width="1323" height="177" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1578578825645" />
+    <state x="379" y="187" key="com.intellij.ide.util.TipDialog" timestamp="1578574356434">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="379" y="187" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1578060669351" />
+    <state x="379" y="187" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1578574356434" />
+    <state x="-16" y="26" width="662" height="705" key="dock-window-1" timestamp="1578474161812">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="-16" y="26" width="662" height="705" key="dock-window-1/0.0.1366.728@0.0.1366.728" timestamp="1578474161812" />
     <state x="65" y="0" key="new project wizard" timestamp="1577178231915">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

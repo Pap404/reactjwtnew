@@ -42,6 +42,29 @@ export const createMessage = (message) => {
     }
 };
 
+export const createComment = (id, comment) => {
+    return {
+        type: 'CREATE_COMMENT',
+        payload: comment,
+        id: id
+    }
+};
+
+export const createCommentSuccess = (id, comment) => {
+  return (dispatch) => {
+      return axios.post(`https://fluxjwt-app.herokuapp.com/api/comment/user/${id}`, comment,
+          { headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json',
+              'Authorization': 'Bearer ' + localStorage.getItem('token')
+          }})
+          .then(response => {
+              console.log(response.data);
+              dispatch(createComment(id, response.data))
+          })
+  }
+};
+
 export const createMessageSuccess = (message) => {
     return (dispatch) => {
         return axios.post('https://fluxjwt-app.herokuapp.com/api/message/user', message,{ headers: {
@@ -50,7 +73,6 @@ export const createMessageSuccess = (message) => {
                 'Authorization': 'Bearer ' + localStorage.getItem('token')
         }})
             .then(response => {
-                console.log(response.data);
                 dispatch(createMessage(response.data))
             })
     }

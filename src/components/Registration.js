@@ -1,6 +1,7 @@
 import React from "react";
-import { getRegistration } from "../action";
+import {getRegistration, getUserSuccess} from "../action";
 import { connect } from "react-redux";
+import {history} from "../index";
 
 class Registration extends React.Component {
     state = {
@@ -17,6 +18,11 @@ class Registration extends React.Component {
     handleSubmit = (event) => {
         event.preventDefault();
         this.props.getRegistration(this.state)
+            .then( () => {
+                    getUserSuccess();
+                    history.push('/user')
+                }
+            );
     };
 
     render() {

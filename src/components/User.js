@@ -16,7 +16,6 @@ class User extends React.Component {
                         <h1>CONTENT FOR USER</h1>
                     <CreateMessage />
                     <h1>
-                        {/*{console.log(this.props.message)}*/}
                         {this.props.message.map(m => <Message key={m.id} message={m} />)}
                     </h1>
                     </div>
