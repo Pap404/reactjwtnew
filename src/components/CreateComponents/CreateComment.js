@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from "react-redux";
-import {createCommentSuccess} from "../action";
+import {createCommentSuccess} from "../../action";
+import paper from "../../paper.png";
 
 class CreateComment extends React.Component {
 
@@ -21,7 +22,7 @@ class CreateComment extends React.Component {
 
     render() {
         return (
-            <div className="App">
+            <div class="text-right">
               <form onSubmit={this.handleSubmit}>
                   <input name='comment'
                          type='text'
@@ -29,7 +30,7 @@ class CreateComment extends React.Component {
                          onChange={this.handleChange}
                          value={this.state.comment}
                   />
-                  <button>Send</button>
+                  <input type="image" src={paper} height="23"/>
               </form>
             </div>
         )

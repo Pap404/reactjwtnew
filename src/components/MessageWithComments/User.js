@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from "react-redux";
-import { getAllMessage } from "../action";
+import { getAllMessage } from "../../action";
 import Message from "./Message";
-import CreateMessage from "./CreateMessage";
+import CreateMessage from "../CreateComponents/CreateMessage";
 
 class User extends React.Component {
 
@@ -12,12 +12,10 @@ class User extends React.Component {
 
     render() {
         return (
-                <div className="App">
-                        <h1>CONTENT FOR USER</h1>
+                <div>
+                        <h1 className="text-center">CONTENT FOR USER</h1>
                     <CreateMessage />
-                    <h1>
                         {this.props.message.map(m => <Message key={m.id} message={m} />)}
-                    </h1>
                     </div>
         )
     }

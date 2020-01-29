@@ -8,11 +8,6 @@ export default function (state = initialState, action) {
             return {
                 comments: action.payload
             };
-        // case 'CREATE_COMMENT':
-        //     return {
-        //         ...state,
-        //         comments: state.comments.concat(action.payload)
-        //     };
         default:
             return state;
     }

@@ -26,6 +26,10 @@ export default function (state = initialState, action) {
                     }
                 })
     };
+        case 'GET_MESSAGE_BY_USERNAME':
+            return {
+                message: action.payload
+            };
         default:
             return state;
     }
